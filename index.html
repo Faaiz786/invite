@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overflow-x-hidden">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Walima Invitation | Md Nafis Ansari & Afreen</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS Animation CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      width: 100%;
+      overflow-x: hidden !important;
+    }
+
+    .font-arabic { font-family: 'Amiri', serif; }
+    .font-urdu { font-family: 'Noto Nastaliq Urdu', serif; }
+    .font-serif-title { font-family: 'Cormorant Garamond', serif; }
+    .font-sans-body { font-family: 'Montserrat', sans-serif; }
+
+    /* Deep Emerald & Gold Luxury Background Pattern Overlay */
+    .bg-floral-invitation {
+      background-color: #062c21;
+      background-image: 
+        radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.22) 0%, transparent 75%),
+        radial-gradient(circle at 100% 100%, rgba(13, 71, 52, 0.8) 0%, transparent 60%),
+        radial-gradient(circle at 0% 100%, rgba(212, 175, 55, 0.15) 0%, transparent 60%),
+        url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M0 0h80v80H0z' fill='none'/%3E%3Cpath d='M40 0c22.09 0 40 17.91 40 40S62.09 80 40 80 0 62.09 0 40 17.91 0 40 0zm0 4c-19.88 0-36 16.12-36 36s16.12 36 36 36 36-16.12 36-36S59.88 4 40 4zm0 6c16.57 0 30 13.43 30 30S56.57 70 40 70 10 56.57 10 40s13.43-30 30-30z'/%3E%3C/g%3E%3C/svg%3E");
+      background-attachment: fixed;
+    }
+
+    /* Gold Metallic Shimmer Text Effect */
+    .text-gold-shimmer {
+      background: linear-gradient(135deg, #f7e7ad 0%, #d4af37 50%, #b89332 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shineGold 4s linear infinite;
+    }
+
+    @keyframes shineGold {
+      to {
+        background-position: 200% center;
+      }
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(0.5deg); }
+    }
+    .animate-float {
+      animation: floatSlow 6s ease-in-out infinite;
+    }
+
+    /* Animated Dark Emerald Glassmorphism Cards with Gold Borders */
+    .glass-card {
+      background: rgba(8, 48, 37, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.15);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-card:hover {
+      border-color: rgba(224, 193, 90, 0.85);
+      box-shadow: 0 20px 45px -5px rgba(0, 0, 0, 0.65), 0 0 30px rgba(212, 175, 55, 0.3);
+      transform: translateY(-4px);
+    }
+
+    /* Dynamic Box Typography & Text Transitions */
+    .glass-card .font-serif-title,
+    .glass-card .font-sans-body,
+    .glass-card .font-arabic,
+    .glass-card .font-urdu {
+      transition: all 0.4s ease-in-out;
+    }
+
+    .glass-card:hover .font-arabic {
+      text-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
+      transform: scale(1.02);
+    }
+
+    .glass-card:hover .font-urdu {
+      text-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
+      transform: scale(1.02);
+    }
+
+    .glass-card:hover .font-serif-title {
+      color: #f7e7ad;
+      letter-spacing: 0.03em;
+    }
+
+    .glass-card .tracking-expand {
+      transition: letter-spacing 0.4s ease, color 0.4s ease;
+    }
+
+    .glass-card:hover .tracking-expand {
+      letter-spacing: 0.3em;
+      color: #e0c15a;
+    }
+
+    /* Countdown digit bounce on hover */
+    .countdown-digit {
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    .countdown-box:hover .countdown-digit {
+      transform: scale(1.1);
+      color: #f7e7ad;
+    }
+
+    /* Interactive Date & Time Countdown Trigger Link */
+    .countdown-trigger-btn {
+      transition: all 0.3s ease;
+    }
+    .countdown-trigger-btn:hover {
+      color: #f7e7ad;
+      border-color: #f7e7ad;
+    }
+  </style>
+</head>
+<body class="bg-floral-invitation text-[#f7f2e8] font-sans-body antialiased selection:bg-[#d4af37]/30 w-full overflow-x-hidden min-h-screen relative">
+
+  <!-- Elegant Gold Corner Floral Elements -->
+  <div class="fixed top-0 left-0 w-44 h-44 sm:w-64 sm:h-64 pointer-events-none z-10 opacity-40">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full text-[#d4af37]">
+      <path d="M0,0 C50,20 80,60 90,120 C60,110 20,80 0,0 Z" fill="currentColor" opacity="0.18"/>
+      <path d="M0,0 Q100,50 120,150 Q50,100 0,0 Z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+      <path d="M20,10 Q140,70 160,180" stroke="#f7e7ad" stroke-width="1" stroke-dasharray="3,3" fill="none"/>
+      <circle cx="120" cy="150" r="4" fill="#f7e7ad"/>
+      <circle cx="80" cy="80" r="3" fill="currentColor"/>
+      <circle cx="40" cy="120" r="2.5" fill="#f7e7ad"/>
+      <path d="M10,0 C30,40 50,50 80,60" stroke="currentColor" stroke-width="1.2"/>
+    </svg>
+  </div>
+  
+  <div class="fixed top-0 right-0 w-44 h-44 sm:w-64 sm:h-64 pointer-events-none z-10 opacity-40 transform scale-x-[-1]">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full text-[#d4af37]">
+      <path d="M0,0 C50,20 80,60 90,120 C60,110 20,80 0,0 Z" fill="currentColor" opacity="0.18"/>
+      <path d="M0,0 Q100,50 120,150 Q50,100 0,0 Z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+      <path d="M20,10 Q140,70 160,180" stroke="#f7e7ad" stroke-width="1" stroke-dasharray="3,3" fill="none"/>
+      <circle cx="120" cy="150" r="4" fill="#f7e7ad"/>
+      <circle cx="80" cy="80" r="3" fill="currentColor"/>
+      <circle cx="40" cy="120" r="2.5" fill="#f7e7ad"/>
+      <path d="M10,0 C30,40 50,50 80,60" stroke="currentColor" stroke-width="1.2"/>
+    </svg>
+  </div>
+
+  <div class="fixed bottom-0 left-0 w-48 h-48 sm:w-72 sm:h-72 pointer-events-none z-10 opacity-30 transform scale-y-[-1]">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full text-[#d4af37]">
+      <path d="M0,0 Q100,50 120,150 Q50,100 0,0 Z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+      <circle cx="120" cy="150" r="4" fill="#f7e7ad"/>
+    </svg>
+  </div>
+
+  <div class="fixed bottom-0 right-0 w-48 h-48 sm:w-72 sm:h-72 pointer-events-none z-10 opacity-30 transform scale-x-[-1] scale-y-[-1]">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full text-[#d4af37]">
+      <path d="M0,0 Q100,50 120,150 Q50,100 0,0 Z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+      <circle cx="120" cy="150" r="4" fill="#f7e7ad"/>
+    </svg>
+  </div>
+
+  <!-- Ambient Golden Glow Spots -->
+  <div class="fixed top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#d4af37]/15 rounded-full blur-3xl pointer-events-none z-0"></div>
+  <div class="fixed bottom-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#0d4734]/40 rounded-full blur-3xl pointer-events-none z-0"></div>
+
+  <!-- ==================== WELCOME COVER OVERLAY ==================== -->
+  <div id="welcomeScreen" class="fixed inset-0 z-[100] bg-[#062c21] flex flex-col items-center justify-center p-4 sm:p-6 text-center transition-all duration-1000 w-full h-full bg-floral-invitation">
+    <div class="relative w-full max-w-sm sm:max-w-md glass-card p-8 sm:p-12 rounded-3xl animate-float mx-auto text-center border-2 border-[#d4af37]/50 shadow-2xl group overflow-hidden">
+      
+      <!-- Subtle Decorative Floral Backing in Cover -->
+      <div class="absolute -top-10 -right-10 w-32 h-32 opacity-20 pointer-events-none">
+        <svg viewBox="0 0 100 100" fill="#d4af37"><path d="M50 0 C60 30 70 40 100 50 C70 60 60 70 50 100 C40 70 30 60 0 50 C30 40 40 30 50 0 Z"/></svg>
+      </div>
+
+      <p class="font-arabic text-2xl sm:text-4xl text-[#f7e7ad] font-bold mb-3 leading-relaxed mt-2 drop-shadow">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+      <h2 class="font-serif-title text-3xl sm:text-4xl font-semibold text-[#f7f2e8] my-2 tracking-wide">Walima Invitation</h2>
+      <p class="text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#e0c15a] font-semibold mb-8 tracking-expand">Md Nafis Ansari & Afreen</p>
+      
+      <button onclick="openInvitation()" type="button" class="w-full py-3.5 bg-gradient-to-r from-[#b89332] via-[#e0c15a] to-[#b89332] text-[#062c21] rounded-xl shadow-xl hover:opacity-95 active:scale-95 transition-all duration-300 font-bold text-[11px] sm:text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-2.5 cursor-pointer border border-[#f7e7ad]/60 relative z-10">
+        <svg class="w-4 h-4 text-[#062c21]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.07V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l6.75-4.5M21 19l-6.75-4.5M3 10l6.75 4.5M21 10l-6.75 4.5"/></svg>
+        <span>Open Invitation</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Multi-source Audio Element with Fallbacks -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=soft-ambient-piano-111154.mp3" type="audio/mpeg">
+    <source src="https://cdn.pixabay.com/download/audio/2022/10/14/audio_9939f1e1cb.mp3?filename=soft-ambient-124484.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Audio Toggle Floating Controller -->
+  <div class="fixed top-4 right-4 sm:top-6 sm:right-6 z-50">
+    <button id="audioToggle" onclick="toggleAudio()" class="glass-card text-[#f7e7ad] p-3 rounded-full shadow-lg border border-[#d4af37]/60 hover:bg-[#0d4734] active:scale-95 transition-all flex items-center justify-center cursor-pointer group" aria-label="Toggle Audio">
+      <svg id="musicIconPlay" class="w-4 h-4 sm:w-5 sm:h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <svg id="musicIconPause" class="w-4 h-4 sm:w-5 sm:h-5 text-[#e0c15a] animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    </button>
+  </div>
+
+  <!-- ==================== SECTION 1: BISMILLAH PAGE ==================== -->
+  <section id="section1" class="min-h-screen flex flex-col justify-between items-center text-center px-4 py-12 relative w-full max-w-3xl mx-auto z-20">
+    <div></div>
+
+    <div data-aos="zoom-in" class="glass-card p-8 sm:p-14 rounded-3xl border border-[#d4af37]/40 shadow-2xl w-full max-w-md sm:max-w-xl mx-auto text-center my-auto relative group overflow-hidden">
+      
+      <!-- Internal Subtle Vine Motif -->
+      <div class="absolute -bottom-12 -left-12 w-32 h-32 opacity-15 pointer-events-none">
+        <svg viewBox="0 0 100 100" fill="#e0c15a"><circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+      </div>
+
+      <!-- Hamd -->
+      <p data-aos="fade-down" data-aos-delay="100" class="font-arabic text-3xl sm:text-5xl text-[#f7e7ad] font-bold mb-2 text-center leading-relaxed drop-shadow-md" dir="rtl">
+        الْحَمْدُ لِلَّٰهِ
+      </p>
+
+      <p data-aos="fade-up" data-aos-delay="200" class="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#e0c15a] font-semibold mb-8 text-center tracking-expand" dir="ltr">
+        All Praise & Thanks Belong to Allah
+      </p>
+
+      <div data-aos="zoom-in" data-aos-delay="300" class="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#d4af37] to-transparent mx-auto mb-8 group-hover:w-28 transition-all duration-500"></div>
+
+      <!-- Bismillah -->
+      <p data-aos="fade-up" data-aos-delay="400" class="font-arabic text-2xl sm:text-4xl text-[#f7f2e8] leading-relaxed my-2 text-center drop-shadow-sm" dir="rtl">
+        بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
+      </p>
+
+      <p data-aos="fade-up" data-aos-delay="500" class="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#e0c15a] font-semibold mt-4 text-center tracking-expand" dir="ltr">
+        In the name of Allah, the Most Gracious, the Most Merciful
+      </p>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <a href="#section2" data-aos="fade-up" data-aos-delay="600" class="my-4 animate-bounce text-[10px] uppercase tracking-[0.2em] text-[#f7e7ad] font-semibold flex flex-col items-center cursor-pointer hover:opacity-80 transition-opacity">
+      <span>Scroll To View Invitation</span>
+      <svg class="w-4 h-4 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+    </a>
+  </section>
+
+  <!-- ==================== SECTION 2: COUPLE NAMES PAGE ==================== -->
+  <section id="section2" class="min-h-screen flex flex-col justify-between items-center text-center px-4 py-12 relative w-full max-w-4xl mx-auto z-20">
+    <div></div>
+
+    <div class="w-full flex flex-col items-center my-auto">
+      <p data-aos="fade-down" class="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-[#e0c15a] font-semibold mb-4 text-center" dir="ltr">
+        Walima Reception
+      </p>
+
+      <!-- Couple Names Card -->
+      <div data-aos="zoom-in" data-aos-delay="200" class="glass-card p-8 sm:p-16 rounded-3xl border border-[#d4af37]/40 shadow-2xl w-full max-w-lg sm:max-w-2xl mx-auto text-center relative group">
+        <p class="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-[#e0c15a] font-medium mb-6 tracking-expand">Together With Their Families</p>
+        
+        <h1 class="font-serif-title text-4xl sm:text-6xl font-bold text-[#f7f2e8] tracking-wide leading-tight group-hover:text-gold-shimmer">
+          Md Nafis Ansari
+        </h1>
+        <div class="my-3 flex items-center justify-center gap-3">
+          <span class="h-[1px] w-12 bg-[#d4af37]/50 group-hover:w-20 transition-all duration-500"></span>
+          <span class="font-serif-title text-2xl sm:text-4xl italic text-[#f7e7ad] transition-transform duration-500 group-hover:scale-125">&</span>
+          <span class="h-[1px] w-12 bg-[#d4af37]/50 group-hover:w-20 transition-all duration-500"></span>
+        </div>
+        <h1 class="font-serif-title text-4xl sm:text-6xl font-bold text-[#f7f2e8] tracking-wide leading-tight group-hover:text-gold-shimmer">
+          Afreen
+        </h1>
+
+        <!-- Interactive Countdown Trigger Area -->
+        <div class="border-t border-[#d4af37]/30 pt-6 mt-8 flex flex-col items-center justify-center">
+          <button type="button" onclick="toggleCountdownModal()" class="countdown-trigger-btn group/btn inline-flex flex-col items-center justify-center cursor-pointer border-b border-dashed border-[#e0c15a]/60 pb-1 hover:border-[#f7e7ad] transition-all">
+            <span class="text-[11px] sm:text-xs tracking-[0.2em] font-semibold uppercase text-[#f7f2e8] text-center transition-colors group-hover/btn:text-[#f7e7ad]">
+              WEDNESDAY, 7 APRIL 2027 · 7:00 PM
+            </span>
+          </button>
+          
+          <button type="button" onclick="toggleCountdownModal()" class="mt-3 text-[9px] sm:text-[10px] tracking-[0.25em] uppercase font-bold text-[#e0c15a] flex items-center gap-1.5 hover:text-[#f7e7ad] transition-colors cursor-pointer">
+            <svg class="w-3.5 h-3.5 text-[#d4af37] animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>TAP THE TIME TO SEE THE COUNTDOWN</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <a href="#section3" data-aos="fade-up" data-aos-delay="400" class="my-4 animate-bounce text-[10px] uppercase tracking-[0.2em] text-[#f7e7ad] font-semibold flex flex-col items-center cursor-pointer hover:opacity-80 transition-opacity">
+      <span>Scroll For Blessings & Dua</span>
+      <svg class="w-4 h-4 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+    </a>
+  </section>
+
+  <!-- ==================== SECTION 3: BLESSINGS & POETRY SECTION ==================== -->
+  <section id="section3" class="py-16 sm:py-24 px-4 w-full max-w-2xl mx-auto text-center z-20 relative">
+    
+    <!-- Arabic Greeting -->
+    <p data-aos="fade-left" dir="rtl" class="font-arabic text-2xl sm:text-3xl font-semibold text-[#f7e7ad] mb-3 text-center leading-relaxed drop-shadow-sm">
+      السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ
+    </p>
+
+    <h2 data-aos="fade-right" data-aos-delay="100" dir="ltr" class="font-serif-title text-2xl sm:text-4xl mb-4 text-[#f7f2e8] text-center font-semibold">
+      With the Grace of Almighty Allah
+    </h2>
+    
+    <div data-aos="zoom-in" data-aos-delay="150" class="w-12 h-[1px] bg-[#d4af37] mx-auto mb-6"></div>
+    
+    <p data-aos="fade-right" data-aos-delay="200" dir="ltr" class="text-base sm:text-lg leading-relaxed text-[#e6ded1] font-serif-title italic mb-2 text-center">
+      "And among His signs is that He created for you mates from among yourselves, that you may dwell in tranquility with them, and He has put love and mercy between your hearts."
+    </p>
+    <p data-aos="fade-right" data-aos-delay="250" dir="ltr" class="text-[10px] uppercase tracking-[0.2em] text-[#e0c15a] font-semibold mb-8 text-center">
+      — Surah Ar-Rum (30:21)
+    </p>
+
+    <!-- Urdu Poetry Card with Font Transitions -->
+    <div data-aos="fade-left" data-aos-delay="300" dir="rtl" class="glass-card p-6 sm:p-10 rounded-3xl border border-[#d4af37]/40 shadow-xl my-8 w-full text-center group relative overflow-hidden">
+      
+      <!-- Soft Watermark Background Icon -->
+      <div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+        <svg class="w-48 h-48 text-[#d4af37]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      </div>
+
+      <p class="font-urdu text-lg sm:text-2xl leading-loose text-[#f7e7ad] mb-4 text-center relative z-10">
+        دو دِلوں کا ملن ایک پاک رشتہ ہے<br>
+        یہ رب کریم کا خاص کرم اور تحفہ ہے
+      </p>
+      <div class="w-10 h-[1px] bg-[#d4af37]/50 mx-auto mb-4 group-hover:w-24 transition-all duration-500"></div>
+      <p class="font-serif-title italic text-[#e6ded1] text-sm sm:text-base text-center relative z-10" dir="ltr">
+        "Two hearts unite in a sacred bond blessed by the grace and mercy of the Almighty."
+      </p>
+    </div>
+
+    <!-- Islamic Dua -->
+    <p data-aos="fade-left" data-aos-delay="350" dir="rtl" class="font-arabic text-2xl sm:text-3xl text-[#f7e7ad] my-4 text-center leading-relaxed">
+      بَارَكَ اللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
+    </p>
+    <p data-aos="fade-right" data-aos-delay="400" dir="ltr" class="text-[10px] uppercase tracking-[0.2em] text-[#e0c15a] font-medium mb-6 text-center">
+      "May Allah bless you, and shower His blessings upon you, and join you together in goodness."
+    </p>
+  </section>
+
+  <!-- ==================== SECTION 4: VENUE & PROGRAM DETAILS ==================== -->
+  <section id="section4" class="py-16 sm:py-20 px-4 w-full max-w-2xl mx-auto text-center z-20 relative">
+    <div class="w-full text-center" dir="ltr">
+      <h2 data-aos="fade-right" class="font-serif-title text-3xl sm:text-4xl mb-8 text-[#f7f2e8] text-center font-semibold">Venue & Program Details</h2>
+      
+      <div data-aos="fade-right" data-aos-delay="150" class="glass-card p-8 sm:p-12 rounded-3xl shadow-2xl border border-[#d4af37]/40 text-center relative group">
+        <h3 class="font-serif-title text-2xl sm:text-3xl mb-1 text-[#f7e7ad] font-semibold">Grand Walima Reception</h3>
+        <p class="text-[10px] font-semibold text-[#e0c15a] uppercase tracking-[0.2em] mb-6 tracking-expand">Wednesday, April 7, 2027 • 7:00 PM Onwards</p>
+        
+        <div class="space-y-1 mb-8 text-[#e6ded1] text-center">
+          <p class="text-xl sm:text-2xl font-serif-title font-bold text-[#f7f2e8] group-hover:text-[#f7e7ad] transition-colors">R.S. Palace / R.S. Garden</p>
+          <p class="text-xs sm:text-sm leading-relaxed">Poddar Para Road, Phularibad, Jharia</p>
+          <p class="text-xs sm:text-sm leading-relaxed">Dhanbad, Jharkhand - 828111</p>
+        </div>
+
+        <button onclick="openGoogleMaps()" type="button" class="inline-flex items-center gap-2.5 px-7 py-3.5 text-[11px] uppercase tracking-[0.2em] text-[#062c21] bg-gradient-to-r from-[#b89332] via-[#e0c15a] to-[#b89332] rounded-xl hover:opacity-95 active:scale-95 transition-all duration-300 shadow-md font-bold cursor-pointer border border-[#f7e7ad]/60">
+          <svg class="w-4 h-4 text-[#062c21]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span>Get Route Directions</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 5: INLINE COUNTDOWN TIMER SECTION ==================== -->
+  <section id="section-countdown" class="pb-16 sm:pb-24 px-4 w-full max-w-2xl mx-auto text-center z-20 relative">
+    <div data-aos="zoom-in" class="glass-card p-8 sm:p-12 rounded-3xl border border-[#d4af37]/40 shadow-2xl text-center group">
+      
+      <!-- In Shaa Allah Calligraphy -->
+      <p class="font-arabic text-2xl sm:text-3xl text-[#f7e7ad] font-bold mb-1 leading-relaxed" dir="rtl">
+        إِنْ شَاءَ ٱللَّٰهُ
+      </p>
+
+      <h3 class="font-serif-title text-2xl sm:text-3xl font-semibold text-[#f7f2e8] mb-1">
+        Countdown to our Walima
+      </h3>
+      <p class="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#e0c15a] font-semibold mb-8">
+        WEDNESDAY, 7 APRIL 2027 · 7:00 PM
+      </p>
+
+      <!-- 4 Unit Grid Live Timer -->
+      <div class="grid grid-cols-4 gap-2.5 sm:gap-4 text-center max-w-md mx-auto">
+        <div class="bg-[#062c21]/80 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-[#d4af37]/40 shadow-md countdown-box flex flex-col justify-center items-center">
+          <span id="inline-timer-days" class="block font-serif-title text-2xl sm:text-4xl font-bold text-[#f7e7ad] countdown-digit leading-none mb-1">00</span>
+          <span class="text-[8px] sm:text-[10px] uppercase tracking-[0.15em] text-[#e0c15a] font-semibold">DAYS</span>
+        </div>
+        <div class="bg-[#062c21]/80 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-[#d4af37]/40 shadow-md countdown-box flex flex-col justify-center items-center">
+          <span id="inline-timer-hours" class="block font-serif-title text-2xl sm:text-4xl font-bold text-[#f7e7ad] countdown-digit leading-none mb-1">00</span>
+          <span class="text-[8px] sm:text-[10px] uppercase tracking-[0.15em] text-[#e0c15a] font-semibold">HOURS</span>
+        </div>
+        <div class="bg-[#062c21]/80 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-[#d4af37]/40 shadow-md countdown-box flex flex-col justify-center items-center">
+          <span id="inline-timer-minutes" class="block font-serif-title text-2xl sm:text-4xl font-bold text-[#f7e7ad] countdown-digit leading-none mb-1">00</span>
+          <span class="text-[8px] sm:text-[10px] uppercase tracking-[0.15em] text-[#e0c15a] font-semibold">MINS</span>
+        </div>
+        <div class="bg-[#062c21]/80 backdrop-blur-md p-3 sm:p-4 rounded-2xl border border-[#d4af37]/40 shadow-md countdown-box flex flex-col justify-center items-center">
+          <span id="inline-timer-seconds" class="block font-serif-title text-2xl sm:text-4xl font-bold text-[#f7e7ad] countdown-digit leading-none mb-1">00</span>
+          <span class="text-[8px] sm:text-[10px] uppercase tracking-[0.15em] text-[#e0c15a] font-semibold">SECS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 6: INVITATION REQUEST ==================== -->
+  <section id="section6" class="pb-16 sm:pb-24 px-4 w-full max-w-2xl mx-auto text-center z-20 relative">
+    <div data-aos="fade-up" class="glass-card p-8 sm:p-12 rounded-3xl border border-[#d4af37]/40 shadow-2xl text-center group">
+      <p data-aos="fade-left" dir="rtl" class="font-urdu text-lg sm:text-2xl text-[#f7e7ad] mb-4 text-center leading-relaxed">آپ کی تشریف آوری ہمارے لیے باعثِ مسرت ہوگی</p>
+      <h2 dir="ltr" class="font-serif-title text-2xl sm:text-3xl mb-3 text-[#f7f2e8] text-center font-semibold">Kindly Grace Us With Your Presence</h2>
+      <div class="w-12 h-[1px] bg-[#d4af37] mx-auto mb-6 group-hover:w-28 transition-all duration-500"></div>
+      
+      <p dir="ltr" class="text-xs sm:text-base leading-relaxed text-[#e6ded1] font-serif-title italic mb-8 text-center">
+        "We cordially request the honor of your presence and prayers to grace the celebratory occasion of our Walima reception. Your presence will add immense joy to our celebration."
+      </p>
+      
+      <p dir="ltr" class="text-[10px] uppercase tracking-[0.2em] text-[#e0c15a] font-semibold text-center tracking-expand">
+        With Best Compliments & Regards From Friends & Family
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== COUNTDOWN POP-UP MODAL ==================== -->
+  <div id="countdownModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-md hidden flex items-center justify-center p-4 transition-all duration-300 opacity-0 pointer-events-none">
+    <div class="glass-card bg-[#062c21]/95 rounded-3xl p-6 sm:p-10 max-w-sm sm:max-w-md w-full text-center relative border border-[#d4af37]/50 shadow-2xl mx-auto group transform scale-95 transition-all duration-300">
+      
+      <!-- Close Button (X) -->
+      <button onclick="toggleCountdownModal()" type="button" aria-label="Close Modal" class="absolute top-4 right-4 text-[#e0c15a] hover:text-[#f7e7ad] transition-colors cursor-pointer p-1 rounded-full hover:bg-white/10">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <!-- In Shaa Allah Calligraphy Header -->
+      <p class="font-arabic text-2xl sm:text-3xl text-[#f7e7ad] font-bold mb-1 leading-relaxed" dir="rtl">
+        إِنْ شَاءَ ٱللَّٰهُ
+      </p>
+
+      <!-- Modal Main Heading & Date Subheading -->
+      <h3 class="font-serif-title text-2xl sm:text-3xl font-semibold text-[#f7f2e8] mb-1">
+        Countdown to our Walima
+      </h3>
+      <p class="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-[#e0c15a] font-medium mb-6">
+        WEDNESDAY, 7 APRIL 2027 · 7:00 PM
+      </p>
+
+      <!-- 4 Unit Grid Timer Cards -->
+      <div class="grid grid-cols-4 gap-2 sm:gap-3 text-center mb-2">
+        <div class="bg-[#083025] p-3 sm:p-4 rounded-2xl border border-[#d4af37]/30 shadow-sm countdown-box flex flex-col justify-center items-center">
+          <span id="modal-timer-days" class="block font-serif-title text-2xl sm:text-3xl font-bold text-[#f7e7ad] countdown-digit leading-none mb-1">00</span>
+          <span class="text-[8px] sm:text-[9px] uppercase tracking-[0.15em] text-[#e0c15a] font-semibold">DAYS</span>
+        </div>
+        <div class="bg-[#083025] p-3 sm:p-4 rounded-2xl border border-[#d4af37]/30 shadow-sm countdown-box flex flex-col justify-center items-center">
+          <span id="modal-timer-hours" class="block font-serif-title text-2xl sm:text-3xl font-bold text-[#f7e7ad] countdown-digit leading-none mb-1">00</span>
+          <span class="text-[8px] sm:text-[9px] uppercase tracking-[0.15em] text-[#e0c15a] font-semibold">HOURS</span>
+        </div>
+        <div class="bg-[#083025] p-3 sm:p-4 rounded-2xl border border-[#d4af37]/30 shadow-sm countdown-box flex flex-col justify-center items-center">
+          <span id="modal-timer-minutes" class="block font-serif-title text-2xl sm:text-3xl font-bold text-[#f7e7ad] countdown-digit leading-none mb-1">00</span>
+          <span class="text-[8px] sm:text-[9px] uppercase tracking-[0.15em] text-[#e0c15a] font-semibold">MINS</span>
+        </div>
+        <div class="bg-[#083025] p-3 sm:p-4 rounded-2xl border border-[#d4af37]/30 shadow-sm countdown-box flex flex-col justify-center items-center">
+          <span id="modal-timer-seconds" class="block font-serif-title text-2xl sm:text-3xl font-bold text-[#f7e7ad] countdown-digit leading-none mb-1">00</span>
+          <span class="text-[8px] sm:text-[9px] uppercase tracking-[0.15em] text-[#e0c15a] font-semibold">SECS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="py-8 text-center text-[10px] tracking-[0.2em] uppercase text-[#e0c15a]/70 z-20 relative">
+    Md Nafis Ansari & Afreen • 2027
+  </footer>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  
+  <script>
+    
+    // Robust Web Audio Synth Fallback for guaranteed soft ambient tone if MP3 streams are blocked
+    let synthContext = null;
+    let synthGain = null;
+    let isSynthPlaying = false;
+
+    function playSynthAmbient() {
+      try {
+        if (!synthContext) {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          synthContext = new AudioContext();
+        }
+        if (synthContext.state === 'suspended') {
+          synthContext.resume();
+        }
+        
+        if (isSynthPlaying) return;
+
+        // Gentle Ambient Arpeggiated Soft Chords (C Maj / Am vibe)
+        const frequencies = [261.63, 329.63, 392.00, 523.25, 440.00, 349.23];
+        let noteIndex = 0;
+
+        synthGain = synthContext.createGain();
+        synthGain.gain.setValueAtTime(0.08, synthContext.currentTime);
+        synthGain.connect(synthContext.destination);
+
+        function playSoftNote() {
+          if (!isSynthPlaying) return;
+          const osc = synthContext.createOscillator();
+          const noteGain = synthContext.createGain();
+          
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(frequencies[noteIndex], synthContext.currentTime);
+          
+          noteGain.gain.setValueAtTime(0, synthContext.currentTime);
+          noteGain.gain.linearRampToValueAtTime(0.05, synthContext.currentTime + 1.2);
+          noteGain.gain.exponentialRampToValueAtTime(0.0001, synthContext.currentTime + 4.0);
+
+          osc.connect(noteGain);
+          noteGain.connect(synthGain);
+
+          osc.start();
+          osc.stop(synthContext.currentTime + 4.2);
+
+          noteIndex = (noteIndex + 1) % frequencies.length;
+          setTimeout(playSoftNote, 2200);
+        }
+
+        isSynthPlaying = true;
+        playSoftNote();
+      } catch (err) {
+        console.log("Audio Synth Fallback error:", err);
+      }
+    }
+
+    function stopSynthAmbient() {
+      if (isSynthPlaying) {
+        isSynthPlaying = false;
+        if (synthGain && synthContext) {
+          synthGain.gain.linearRampToValueAtTime(0.0001, synthContext.currentTime + 0.5);
+        }
+      }
+    }
+
+    // 1. Welcome Screen & Soft Audio Playback Trigger
+    function openInvitation() {
+      const welcomeScreen = document.getElementById('welcomeScreen');
+      const bgMusic = document.getElementById('bgMusic');
+
+      // Hide welcome overlay smoothly
+      welcomeScreen.classList.add('opacity-0');
+      setTimeout(() => {
+        welcomeScreen.classList.add('hidden');
+      }, 1000);
+
+      // Start soft background music with failover fallback
+      bgMusic.volume = 0.35;
+      const playPromise = bgMusic.play();
+
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          console.log("Audio playback started successfully.");
+          updateAudioUI(true);
+        }).catch((err) => {
+          console.log("Remote audio stream failed or autoplay blocked. Activating ambient synth fallback.", err);
+          playSynthAmbient();
+          updateAudioUI(true);
+        });
+      }
+    }
+
+    // Direct Google Maps Directions Navigation
+    function openGoogleMaps() {
+      var mapsUrl = "https://www.google.com/maps/dir/?api=1&destination=R+S+PALACE,+Indra+Gandhi+Chowk,+Poddar+Para+Rd,+Jharia,+Dhanbad";
+      window.open(mapsUrl, '_blank');
+    }
+
+    // Initialize Scroll Animations
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out',
+        once: false,
+        mirror: true
+      });
+    });
+
+    // 2. Dual Countdown Timer Logic (Inline & Modal sync)
+    const weddingDate = new Date("April 07, 2027 19:00:00").getTime();
+
+    function updateCountdownTimer() {
+      const currentTime = new Date().getTime();
+      const distance = weddingDate - currentTime;
+
+      const formatted = (val) => val < 10 ? '0' + val : val;
+
+      if (distance < 0) {
+        ['inline-timer-', 'modal-timer-'].forEach(prefix => {
+          document.getElementById(prefix + "days").innerText = "00";
+          document.getElementById(prefix + "hours").innerText = "00";
+          document.getElementById(prefix + "minutes").innerText = "00";
+          document.getElementById(prefix + "seconds").innerText = "00";
+        });
+        return;
+      }
+
+      const days = formatted(Math.floor(distance / (1000 * 60 * 60 * 24)));
+      const hours = formatted(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+      const minutes = formatted(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+      const seconds = formatted(Math.floor((distance % (1000 * 60)) / 1000));
+
+      // Update Inline Timer
+      document.getElementById("inline-timer-days").innerText = days;
+      document.getElementById("inline-timer-hours").innerText = hours;
+      document.getElementById("inline-timer-minutes").innerText = minutes;
+      document.getElementById("inline-timer-seconds").innerText = seconds;
+
+      // Update Modal Timer
+      document.getElementById("modal-timer-days").innerText = days;
+      document.getElementById("modal-timer-hours").innerText = hours;
+      document.getElementById("modal-timer-minutes").innerText = minutes;
+      document.getElementById("modal-timer-seconds").innerText = seconds;
+    }
+    
+    updateCountdownTimer();
+    setInterval(updateCountdownTimer, 1000);
+
+    // Countdown Modal Controls with Animated Transitions
+    function toggleCountdownModal() {
+      const modal = document.getElementById('countdownModal');
+      const innerCard = modal.querySelector('div');
+
+      if (modal.classList.contains('hidden')) {
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+          modal.classList.remove('opacity-0', 'pointer-events-none');
+          innerCard.classList.remove('scale-95');
+          innerCard.classList.add('scale-100');
+        }, 10);
+      } else {
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        innerCard.classList.remove('scale-100');
+        innerCard.classList.add('scale-95');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+        }, 300);
+      }
+    }
+
+    // Audio Controls Toggle with Audio & Synth Support
+    const music = document.getElementById('bgMusic');
+    const playIcon = document.getElementById('musicIconPlay');
+    const pauseIcon = document.getElementById('musicIconPause');
+
+    function updateAudioUI(isPlaying) {
+      if (isPlaying) {
+        playIcon.classList.add('hidden');
+        pauseIcon.classList.remove('hidden');
+      } else {
+        playIcon.classList.remove('hidden');
+        pauseIcon.classList.add('hidden');
+      }
+    }
+
+    function toggleAudio() {
+      if (!music.paused || isSynthPlaying) {
+        music.pause();
+        stopSynthAmbient();
+        updateAudioUI(false);
+      } else {
+        music.play().then(() => {
+          updateAudioUI(true);
+        }).catch(() => {
+          playSynthAmbient();
+          updateAudioUI(true);
+        });
+      }
+    }
+  </script>
+</body>
+</html>
